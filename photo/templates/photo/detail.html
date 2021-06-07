@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}
+    {{object.text | truncatechars:10}}
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 panel panel-default">
+            <p><img src="{{object.photo.url}}" style="width:100%;"></p>
+            <button type="button" class="btn btn-outline-primary btn-sm">
+                {{object.author.username}}
+            </button>
+            <p>{{object.text | linebreaksbr}}</p>
+
+            <!--삭제 버튼-->
+            <a href="{% url 'photo:photo_delete' pk=object.id %}" class="btn btn-outline-danger btn-sm float-right">지우께옹</a>
+            <!--수정 버튼-->
+            <a href="{% url 'photo:photo_update' pk=object.id %}" class="btn btn-outline-success btn-sm float-right">바꾸께옹</a>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+{% endblock %}

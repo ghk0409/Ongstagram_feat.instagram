@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}- Delete{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 panel panel-default">
+        <div class="alert alert-info">
+            {{object}} 나가리옹?
+        </div>
+        <!-- 따로 파일 전송은 없기 때문에 enctype 사용 안함-->
+        <form action="" method="post">
+            {{form.as_p}}
+            {% csrf_token %}
+            <input type="submit" class="btn btn-danger" value="빠잉이옹">
+        </form>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+{% endblock %}

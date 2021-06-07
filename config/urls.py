@@ -15,10 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     # URL패턴을 ''으로 설정하면 photo 앱이 메인 페이지로 동작합니다.
     path('', include('photo.urls')),
+    path('accounts/', include('accounts.urls'))
 ]
+
+# static을 이용해 MEDIA_URL에 해당하는 주소 요청에 MEDIA_ROOT에서 응답하도록 urlpatterns에 추가
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

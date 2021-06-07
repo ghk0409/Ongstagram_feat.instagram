@@ -30,13 +30,14 @@
                         <a href="{% url 'photo:photo_upload' %}" class="nav-link">사진이게옹</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">또 오게옹:)</a>
+                        <!--로그아웃-->
+                        <a href="{% url 'logout' %}" class="nav-link">또 오게옹:)</a>
                     </li>
                     <!--사용자가 로그아웃 상태일 경우-->
                     {% else %}
                     <li class="nav-item">
                         <!--로그인-->
-                        <a href="#" class="nav-link">들어오게옹</a>
+                        <a href="{% url 'login' %}" class="nav-link">들어오게옹</a>
                     </li>
                     <li class="nav-item">
                         <!--회원가입-->

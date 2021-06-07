@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %}- UPLOAD{% endblock %}
+{% block title %}- UPDATE{% endblock %}
 
 {% block content %}
 <div class="row">
@@ -8,7 +8,7 @@
         <form action="" method="post" enctype="multipart/form-data">
             {{form.as_p}}
             {% csrf_token %}
-            <input type="submit" class="btn btn-primary" value="자신있어옹?">
+            <input type="submit" class="btn btn-primary" value="밑장못빼옹">
         </form>
     </div>
     <div class="col-md-2"></div>
