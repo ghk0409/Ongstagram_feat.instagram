@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}- REGISTRATION{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 panel panel-default">
+        <div class="alert alert-info">회원가입 정보를 입력 부탁해옹</div>
+        <form action="" method="post">
+            {{form.as_p}}
+            {% csrf_token %}
+            <input class="btn btn-primary" type="submit" value="회원가입">
+        </form>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+{% endblock %}

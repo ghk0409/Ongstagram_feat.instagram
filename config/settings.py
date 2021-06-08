@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'photo',
     'accounts',
+    'disqus',
+    'django.contrib.sites',  # Django 사이트 관리 프레임워크
 ]
 
 MIDDLEWARE = [
@@ -134,3 +136,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # 로그인 성공 시, 이동할 페이지 설정
 LOGIN_REDIRECT_URL = '/'
+
+# 아래 변수의 값은 반드시!! disqus 사이트에서 설정했던 이름을 써주세요!!
+DISQUS_WEBSITE_SHORTNAME = 'onstagram'
+# sites 앱에 등록된 현재 사이트의 번호로 기본 사이트 번호가 1입니다.
+SITE_ID = 1
