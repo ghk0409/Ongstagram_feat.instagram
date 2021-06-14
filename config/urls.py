@@ -15,8 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.conf.urls.static import static
-from django.conf import settings
+# from django.conf.urls.static import static
+# from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,6 +25,7 @@ urlpatterns = [
     path('accounts/', include('accounts.urls'))
 ]
 
+# AWS S3 연동으로 불필요한 설정 주석 처리 (위의 import 부분도 포함)
 # static을 이용해 MEDIA_URL에 해당하는 주소 요청에 MEDIA_ROOT에서 응답하도록 urlpatterns에 추가
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

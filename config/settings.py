@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'accounts',
     'disqus',
     'django.contrib.sites',  # Django 사이트 관리 프레임워크
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -141,3 +142,15 @@ LOGIN_REDIRECT_URL = '/'
 DISQUS_WEBSITE_SHORTNAME = 'onstagram'
 # sites 앱에 등록된 현재 사이트의 번호로 기본 사이트 번호가 1입니다.
 SITE_ID = 1
+
+# AWS 관련 설정 추가
+AWS_ACCESS_KEY_ID = 'AKIAZ4SKSFAFGEUXNEST'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_REGION = 'ap-northeast-2'
+AWS_STORAGE_BUCKET_NAME = 'onstagram'
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.%s.amazonaws.com' % (AWS_STORAGE_BUCKET_NAME, AWS_REGION)
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl' : 'max-age=86400',
+}
+
+DEFAULT_FILE_STORAGE = 'config.asset_storage.MediaStorage'
